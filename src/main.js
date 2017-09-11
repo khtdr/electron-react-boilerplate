@@ -4,11 +4,11 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-require('electron-compile').enableLiveReload();
 let win
 
 function createWindow () {
   // Create the browser window.
+  require('electron-compile').enableLiveReload({strategy:'react-hmr'});
   win = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.

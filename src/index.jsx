@@ -1,16 +1,21 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const App = require('./ui/containers/App.jsx');
-
-const {Provider} = require('react-redux');
+const {AppContainer} = require('react-hot-loader');
 const {createStore} = require('redux');
-
 const counter = require('./reducer/counter');
-
 const store = createStore(counter);
 
-ReactDOM.render(
-    <Provider store={store}>
+const render = () => {
+  const {Provider} = require('react-redux');
+  const App = require('./ui/containers/App.jsx');
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
         <App />
-    </Provider>,
-    document.getElementById('root'));
+      </Provider>
+    </AppContainer>
+    , document.getElementById('root'));
+};
+render();
+if (module.hot) { module.hot.accept(render); }
+
