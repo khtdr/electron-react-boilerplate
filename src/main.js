@@ -4,6 +4,7 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
+require('electron-compile').enableLiveReload();
 let win
 
 function createWindow () {
@@ -13,9 +14,9 @@ function createWindow () {
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
   // Open the DevTools.
-  //if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     win.webContents.openDevTools()
-  //}
+  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {
