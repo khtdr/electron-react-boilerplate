@@ -8,7 +8,9 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  require('electron-compile').enableLiveReload({strategy:'react-hmr'});
+  if (process.env.NODE_ENV === 'development') {
+    require('electron-compile').enableLiveReload({strategy:'react-hmr'});
+  }
   win = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.

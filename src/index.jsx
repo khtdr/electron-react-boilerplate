@@ -1,11 +1,14 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const {AppContainer} = require('react-hot-loader');
 const {createStore} = require('redux');
 const counter = require('./reducer/counter');
 const store = createStore(counter);
 
 const render = () => {
+  let AppContainer = props => props.children;
+  if (process.env.NODE_ENV === 'development') {
+    AppContainer = require('react-hot-loader').AppContainer;
+  }
   const {Provider} = require('react-redux');
   const App = require('./ui/containers/App.jsx');
   ReactDOM.render(
