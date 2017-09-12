@@ -1,1 +1,1 @@
-module.exports = require('./counter');
+module.exports = require('./counter.jsx');

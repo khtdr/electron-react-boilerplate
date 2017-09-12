@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-filename-extension */
+
 import test from 'ava';
 import React from 'react';
 import render from 'react-test-renderer';

@@ -1,6 +1,3 @@
-
-
-const React = require('react');
 const connect = require('react-redux').connect;
 const ui = require('../ui');
 const increment = require('./counter-actions').increment;

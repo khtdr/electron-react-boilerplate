@@ -1,12 +1,11 @@
 const { app, BrowserWindow } = require('electron');
-const path = require('path');
-const url = require('url');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
 const installExtensions = async () => {
+  // eslint-disable-next-line global-require
   const installer = require('electron-devtools-installer');
   const extensions = [
     'REACT_DEVELOPER_TOOLS',
@@ -14,13 +13,15 @@ const installExtensions = async () => {
   ];
   return Promise
     .all(extensions.map(name => installer.default(installer[name])))
-    .catch(console.log);
+    .catch(console.error); // eslint-disable-line no-console
 };
 
 const createWindow = async () => {
   if (process.env.NODE_ENV === 'development') {
     await installExtensions();
+    // eslint-disable-next-line global-require
     require('electron-compile').enableLiveReload({ strategy: 'react-hmr' });
+    // eslint-disable-next-line global-require
     require('electron-debug')({ showDevTools: 'bottom' });
   }
 
