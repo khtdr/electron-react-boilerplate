@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="index.css?t=0">
   </head>
   <body>
     <div id="root"></div>
     <script src="renderer.js"></script>
+    <script>
+if (module.hot) {
+  let i = 0;
+  module.hot.accept(() => {
+    let removing = document.querySelector(`link[href='index.css?t=${i}'`);
+    let adding = document.createElement('link');
+    adding.rel = 'stylesheet';
+    adding.href = `index.css?t=${++i}`;
+    document.getElementsByTagName('head')[0].appendChild(adding);
+    setTimeout(() => {
+      removing.parentNode.removeChild(removing);
+    }, 100);
+  });
+}
+    </script>
   </body>
 </html>
