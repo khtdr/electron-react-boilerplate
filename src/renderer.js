@@ -7,7 +7,7 @@ const render = () => {
   if (process.env.NODE_ENV === 'development') {
     AppContainer = require('react-hot-loader').AppContainer;
   }
-  const {Provider} = require('react-redux');
+  const { Provider } = require('react-redux');
   const ActionableStoreApp = require('./actions');
   ReactDOM.render(
     <AppContainer>

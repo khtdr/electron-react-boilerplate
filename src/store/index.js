@@ -1,5 +1,5 @@
 
-const {createStore} = require('redux');
+const { createStore } = require('redux');
 const reducer = require('./counter-reducer');
 
 const store = createStore(reducer, /* preloaded state, */
