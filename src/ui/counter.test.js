@@ -1,7 +1,7 @@
 import test from 'ava';
 import React from 'react';
 import render from 'react-test-renderer';
-import Counter from './Counter.jsx';
+import Counter from './counter';
 
 test('Counter component', t => {
   let tree = render.create(<Counter counter={42} />);

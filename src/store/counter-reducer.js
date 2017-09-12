@@ -1,4 +1,4 @@
-const actions = require('../actions/counterActions');
+const actions = require('../actions/counter-actions');
 
 module.exports = function counter(state, action) {
     state = state || 0;

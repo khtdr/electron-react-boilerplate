@@ -8,11 +8,11 @@ const render = () => {
     AppContainer = require('react-hot-loader').AppContainer;
   }
   const {Provider} = require('react-redux');
-  const App = require('./ui/containers/App.jsx');
+  const ActionableStoreApp = require('./actions');
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <App />
+        <ActionableStoreApp />
       </Provider>
     </AppContainer>
     , document.getElementById('root'));
