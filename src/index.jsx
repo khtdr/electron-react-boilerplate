@@ -1,8 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const {createStore} = require('redux');
-const counter = require('./reducer/counter');
-const store = createStore(counter);
+const store = require('./store');
 
 const render = () => {
   let AppContainer = props => props.children;
@@ -19,6 +17,7 @@ const render = () => {
     </AppContainer>
     , document.getElementById('root'));
 };
+if (module.hot) {
+  module.hot.accept(render);
+}
 render();
-if (module.hot) { module.hot.accept(render); }
-
