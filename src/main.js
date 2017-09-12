@@ -4,20 +4,33 @@ const url = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win;
 
-function createWindow () {
-  // Create the browser window.
+const installExtensions = async () => {
+  const installer = require('electron-devtools-installer');
+  const extensions = [
+    'REACT_DEVELOPER_TOOLS',
+    'REDUX_DEVTOOLS'
+  ];
+  return Promise
+    .all(extensions.map(name => installer.default(installer[name])))
+    .catch(console.log);
+};
+
+const createWindow = async () => {
   if (process.env.NODE_ENV === 'development') {
+    await installExtensions();
     require('electron-compile').enableLiveReload({strategy:'react-hmr'});
   }
+
+  // Create the browser window.
   win = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
   // Open the DevTools.
   if (process.env.NODE_ENV === 'development') {
-    win.webContents.openDevTools()
+    win.webContents.openDevTools({mode:'bottom'});
   }
 
   // Emitted when the window is closed.
