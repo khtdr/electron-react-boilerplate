@@ -21,6 +21,7 @@ const createWindow = async () => {
   if (process.env.NODE_ENV === 'development') {
     await installExtensions();
     require('electron-compile').enableLiveReload({strategy:'react-hmr'});
+    require('electron-debug')({showDevTools:'bottom'});
   }
 
   // Create the browser window.
@@ -28,10 +29,6 @@ const createWindow = async () => {
 
   // and load the index.html of the app.
   win.loadURL('file://' + __dirname + '/index.html');
-  // Open the DevTools.
-  if (process.env.NODE_ENV === 'development') {
-    win.webContents.openDevTools({mode:'bottom'});
-  }
 
   // Emitted when the window is closed.
   win.on('closed', () => {

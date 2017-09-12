@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "electron-compile": "^6.4.1",
+    "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -63,6 +64,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "devtron": "^1.4.0",
     "electron-forge": "^4.0.2",
     "electron-prebuilt-compile": "1.7.5",
     "eslint": "^3",
