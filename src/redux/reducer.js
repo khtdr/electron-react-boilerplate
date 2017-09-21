@@ -1,4 +1,4 @@
-const actions = require('../actions/counter-actions');
+const actions = require('./actions');
 
 module.exports = function counter(state = 0, action) {
   switch (action.type) {

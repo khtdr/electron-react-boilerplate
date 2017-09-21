@@ -1,6 +1,6 @@
 
 const { createStore } = require('redux');
-const reducer = require('./counter-reducer');
+const reducer = require('./reducer');
 
 /* eslint-disable */
 const store = createStore(reducer, /* preloaded state, */
@@ -12,8 +12,6 @@ module.exports = store;
 if (module.hot) {
   module.hot.accept(() => {
     // eslint-disable-next-line global-require
-    const nextReducer = require('./counter-reducer');
-    store.replaceReducer(nextReducer);
-    module.exports = store;
+    store.replaceReducer(require('./reducer'));
   });
 }

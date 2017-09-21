@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css?t=0">
+    <link rel="stylesheet" href="ui/style.css?t=0">
   </head>
   <body>
     <div id="root"></div>
-    <script src="index.jsx"></script>
+    <script src="renderer.jsx"></script>
     <script>
 if (module.hot) {
   let i = 0;
   module.hot.accept(() => {
-    let removing = document.querySelector(`link[href='index.css?t=${i}'`);
+    let removing = document.querySelector(`link[href='ui/style.css?t=${i}'`);
     let adding = document.createElement('link');
     adding.rel = 'stylesheet';
-    adding.href = `index.css?t=${++i}`;
+    adding.href = `ui/style.css?t=${++i}`;
     document.getElementsByTagName('head')[0].appendChild(adding);
     setTimeout(() => {
       removing.parentNode.removeChild(removing);
