@@ -18,6 +18,7 @@ const installExtensions = async () => {
 
 const createWindow = async () => {
   if (process.env.NODE_ENV === 'development') {
+    require('devtron').install();
     await installExtensions();
     // eslint-disable-next-line global-require
     require('electron-compile').enableLiveReload({ strategy: 'react-hmr' });
