@@ -76,7 +76,7 @@
     "devtron": "^1.4.0",
     "electron-forge": "^4.0.2",
     "electron-prebuilt-compile": "1.7.5",
-    "eslint": "^4",
+    "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
