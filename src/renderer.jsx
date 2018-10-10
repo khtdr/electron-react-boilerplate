@@ -3,19 +3,20 @@ const ReactDOM = require('react-dom');
 const { Provider } = require('react-redux');
 
 const render = () => {
+  /*
   let AppContainer = props => props.children;
-  if (process.env.NODE_ENV === 'development') {
+  if (false && process.env.NODE_ENV === 'development') {
     AppContainer = require('react-hot-loader').AppContainer;
   }
+  */
   const store = require('./redux/store');
-  const ui = require('./ui');
-  const App = require('./redux/connect')(ui);
+  const Ui = require('./ui');
   ReactDOM.render(
-    <AppContainer>
+    //<AppContainer>
       <Provider store={store}>
-        <App />
+        <Ui />
       </Provider>
-    </AppContainer>
+    //</AppContainer>
     , document.getElementById('root'));
 };
 

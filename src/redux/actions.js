@@ -1,7 +1,7 @@
-const INCREMENT = 'INCREMENT';
-module.exports.INCREMENT = INCREMENT;
+const Types = require('./constants');
+
 module.exports.increment = function increment() {
   return {
-    type: INCREMENT,
+    type: Types.INCREMENT,
   };
 };
