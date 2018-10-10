@@ -3,21 +3,17 @@ const ReactDOM = require('react-dom');
 const { Provider } = require('react-redux');
 
 const render = () => {
-  /*
-  let AppContainer = props => props.children;
-  if (false && process.env.NODE_ENV === 'development') {
-    AppContainer = require('react-hot-loader').AppContainer;
-  }
-  */
+  // eslint-disable-next-line global-require
   const store = require('./redux/store');
+  // eslint-disable-next-line global-require
   const Ui = require('./ui');
+  /* eslint-disable no-undef */
   ReactDOM.render(
-    //<AppContainer>
-      <Provider store={store}>
-        <Ui />
-      </Provider>
-    //</AppContainer>
+    <Provider store={store}>
+      <Ui />
+    </Provider>
     , document.getElementById('root'));
+  /* eslint-enable no-undef */
 };
 
 if (module.hot) {
