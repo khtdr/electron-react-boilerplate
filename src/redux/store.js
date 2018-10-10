@@ -2,12 +2,11 @@
 const { createStore } = require('redux');
 const reducer = require('./reducer');
 
-/* eslint-disable no-undef,no-underscore-dangle */
-const store = createStore(reducer, /* preloaded state, */
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-/* eslint-enable no-undef,no-underscore-dangle */
-
-module.exports = store;
+const store = createStore(
+  reducer, /* preloaded state, */
+  // eslint-disable-next-line no-undef,no-underscore-dangle
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 if (module.hot) {
   module.hot.accept(() => {
@@ -15,3 +14,5 @@ if (module.hot) {
     store.replaceReducer(require('./reducer'));
   });
 }
+
+module.exports = store;
