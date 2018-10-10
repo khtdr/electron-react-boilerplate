@@ -59,8 +59,8 @@
     "electron-compile": "^6.4.1",
     "electron-debug": "^1.4.0",
     "electron-devtools-installer": "^2.2.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
@@ -82,7 +82,7 @@
     "eslint-plugin-import": "^2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7",
-    "react-test-renderer": "^15.6.1",
+    "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.1"
   },
   "ava": {
