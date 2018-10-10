@@ -4,15 +4,16 @@ const { Provider } = require('react-redux');
 
 const render = () => {
   // eslint-disable-next-line global-require
-  const store = require('./redux/store');
+  const configureStore = require('./redux/store');
   // eslint-disable-next-line global-require
   const Ui = require('./ui');
   /* eslint-disable no-undef */
   ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={configureStore()}>
       <Ui />
-    </Provider>
-    , document.getElementById('root'));
+    </Provider>,
+    document.getElementById('root'),
+  );
   /* eslint-enable no-undef */
 };
 

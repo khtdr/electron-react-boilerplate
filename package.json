@@ -9,7 +9,7 @@
     "package": "electron-forge package",
     "test": "ava",
     "make": "electron-forge make",
-    "lint": "eslint src",
+    "lint": "eslint --cache --color --ext .jsx,.js src",
     "clean": "rimraf out"
   },
   "keywords": [
@@ -61,6 +61,7 @@
     "electron-devtools-installer": "^2.2.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "styled-components": "^3.4.10"
@@ -81,7 +82,6 @@
     "eslint-plugin-import": "^2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7",
-    "react-hot-loader": "^3.0.0-beta.7",
     "react-test-renderer": "^15.6.1",
     "rimraf": "^2.6.1"
   },
