@@ -2,12 +2,11 @@
   "name": "itchy-molecule",
   "productName": "itchy-molecule",
   "version": "1.0.0",
-  "description": "electron react/redux with hot reloading, electron forge for transpiling and builds,  and ava for testing",
+  "description": "electron react/redux with hot reloading, electron forge for transpiling and builds",
   "main": "src/main.js",
   "scripts": {
     "start": "NODE_ENV=development electron-forge start",
     "package": "electron-forge package",
-    "test": "ava",
     "make": "electron-forge make",
     "lint": "eslint --cache --color --ext .jsx,.js src",
     "clean": "rimraf out"
@@ -18,8 +17,7 @@
     "hmr",
     "hot-reloading",
     "react",
-    "redux",
-    "ava"
+    "redux"
   ],
   "author": "oh kay",
   "license": "MIT",
@@ -56,33 +54,29 @@
     }
   },
   "dependencies": {
-    "electron-compile": "^6.4.1",
-    "electron-debug": "^1.4.0",
-    "electron-devtools-installer": "^2.2.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "styled-components": "^3.4.10"
+    "electron-compile": "^6",
+    "electron-debug": "^2",
+    "electron-devtools-installer": "^2",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-hot-loader": "^4",
+    "react-redux": "^5",
+    "redux": "^3",
+    "styled-components": "^3"
   },
   "devDependencies": {
-    "@ava/babel-preset-stage-4": "^1.1.0",
-    "@ava/babel-preset-transform-test-files": "^3.0.0",
-    "ava": "^0.22.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "devtron": "^1.4.0",
-    "electron-forge": "^4.0.2",
-    "electron-prebuilt-compile": "1.7.5",
+    "electron-forge": "^5.2.2",
+    "electron-prebuilt-compile": "3.0.2",
     "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7",
-    "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.1"
   },
   "ava": {
