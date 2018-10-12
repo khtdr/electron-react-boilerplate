@@ -1,24 +1,20 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const { Provider } = require('react-redux');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import configureStore from './redux/store';
+import Ui from './ui';
 
-const render = () => {
-  // eslint-disable-next-line global-require
-  const configureStore = require('./redux/store');
-  // eslint-disable-next-line global-require
-  const Ui = require('./ui');
-  /* eslint-disable no-undef */
+function render() {
+  const store = configureStore();
   ReactDOM.render(
-    <Provider store={configureStore()}>
+    <Provider store={store}>
       <Ui />
     </Provider>,
-    document.getElementById('root'),
+    document.getElementById('root'), // eslint-disable-line no-undef
   );
-  /* eslint-enable no-undef */
-};
+}
 
 if (module.hot) {
   module.hot.accept(render);
 }
-
 render();
