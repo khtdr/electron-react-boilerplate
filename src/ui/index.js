@@ -1,1 +1,3 @@
-module.exports = require('./counter.jsx');
+import Counter from './counter';
+
+export default Counter;

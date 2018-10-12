@@ -1,7 +1,13 @@
-const Types = require('./constants');
+import Types from './constants';
 
-module.exports.increment = function increment() {
+export function increment() {
   return {
     type: Types.INCREMENT,
   };
-};
+}
+
+export function decrement() {
+  return {
+    type: Types.DECREMENT,
+  };
+}

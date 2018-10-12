@@ -4,31 +4,21 @@ const { app, BrowserWindow } = require('electron');
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
-const installExtensions = async () => {
-  // eslint-disable-next-line global-require
-  const installer = require('electron-devtools-installer');
-  const extensions = [
-    'REACT_DEVELOPER_TOOLS',
-    'REDUX_DEVTOOLS',
-  ];
-  return Promise
-    .all(extensions.map(name => installer.default(installer[name])))
-    .catch(console.error); // eslint-disable-line no-console
-};
-
 const createWindow = async () => {
   if (process.env.NODE_ENV === 'development') {
-    // eslint-disable-next-line global-require
-    require('devtron').install();
-    await installExtensions();
-    // eslint-disable-next-line global-require
+    /* eslint-disable global-require */
+    const installer = require('electron-devtools-installer');
+    const extensions = ['REACT_DEVELOPER_TOOLS'];
+    await Promise
+      .all(extensions.map(name => installer.default(installer[name])))
+      .catch(console.error); // eslint-disable-line no-console
     require('electron-compile').enableLiveReload({ strategy: 'react-hmr' });
-    // eslint-disable-next-line global-require
     require('electron-debug')({ showDevTools: 'bottom' });
+    /* eslint-enabled global-require */
   }
 
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({ width: 720, height: 463 });
 
   // and load the index.html of the app.
   win.loadURL(`file://${__dirname}/index.html`);

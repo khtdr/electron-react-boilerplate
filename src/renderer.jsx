@@ -4,8 +4,9 @@ import { Provider } from 'react-redux';
 import configureStore from './redux/store';
 import Ui from './ui';
 
+const store = configureStore();
+
 function render() {
-  const store = configureStore();
   ReactDOM.render(
     <Provider store={store}>
       <Ui />

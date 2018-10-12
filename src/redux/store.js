@@ -1,18 +1,19 @@
+import * as Redux from 'redux';
+import reducer from './reducer';
 
-const { createStore } = require('redux');
-const reducer = require('./reducer');
+let middleware = null;
+if (process.env.NODE_ENV === 'development') {
+  // eslint-disable-next-line global-require
+  const logger = require('redux-logger').createLogger;
+  middleware = Redux.applyMiddleware(logger({ collapsed: true }));
+}
 
 module.exports = function configureStore() {
-  const store = createStore(
-    reducer, /* preloaded state, */
-    // eslint-disable-next-line no-undef,no-underscore-dangle
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  );
+  const store = Redux.createStore(reducer, middleware);
   if (module.hot) {
     module.hot.accept(() => {
-      console.log('replacing root reducer');
-      // eslint-disable-next-line global-require
-      store.replaceReducer(require('./reducer'));
+      const nextReducer = require('./reducer').default; // eslint-disable-line global-require
+      store.replaceReducer(nextReducer);
     });
   }
   return store;

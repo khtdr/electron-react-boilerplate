@@ -1,20 +1,30 @@
-const React = require('react');
-const styled = require('styled-components').default;
-const { connect } = require('react-redux');
-const actions = require('../redux/actions');
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import * as actions from '../redux/actions';
 
-const CounterButton = styled.button`
-`;
-
-module.exports = connect(
-  state => ({ counter: state }),
-  actions,
-)(props => (
+const Ui = ({ counter, decrement, increment }) => (
   <div>
     <h1>
       Counter:
-      {props.counter}
+      {counter}
     </h1>
-    <CounterButton onClick={props.increment}>Increment</CounterButton>
+    <button type="submit" onClick={decrement}>
+      Decrement
+    </button>
+    <button type="submit" onClick={increment}>
+      Increment
+    </button>
   </div>
-));
+);
+
+Ui.propTypes = {
+  counter: PropTypes.number.isRequired,
+  decrement: PropTypes.func.isRequired,
+  increment: PropTypes.func.isRequired,
+};
+
+export default connect(
+  state => ({ counter: state }),
+  actions,
+)(Ui);
