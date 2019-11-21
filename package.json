@@ -78,6 +78,12 @@
     "redux-logger": "^3",
     "rimraf": "^3.0.0"
   },
+  "resolutions": {
+    "constantinople": "^3.1.1",
+    "js-yaml": "^3.13.1",
+    "lodash": "^4.17.12",
+    "minimatch": "^3.0.2"
+  },
   "ava": {
     "require": [
       "babel-register"
