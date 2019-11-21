@@ -10,7 +10,7 @@ const createWindow = async () => {
     const installer = require('electron-devtools-installer');
     const extensions = ['REACT_DEVELOPER_TOOLS'];
     await Promise
-      .all(extensions.map(name => installer.default(installer[name])))
+      .all(extensions.map((name) => installer.default(installer[name])))
       .catch(console.error); // eslint-disable-line no-console
     require('electron-compile').enableLiveReload({ strategy: 'react-hmr' });
     require('electron-debug')({ showDevTools: 'bottom' });

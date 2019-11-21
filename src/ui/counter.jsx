@@ -25,6 +25,6 @@ Ui.propTypes = {
 };
 
 export default connect(
-  state => ({ counter: state }),
+  (state) => ({ counter: state }),
   actions,
 )(Ui);
